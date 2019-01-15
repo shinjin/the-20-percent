@@ -1,6 +1,15 @@
 
 # Python 3
 
+## Lists
+
+### Getting the last element of a list
+```python
+a = [1, 2, 3]
+a[-1]
+# 3
+```
+
 ### Deleting an element from a list
 #### Deleting the n-th element in a list
 ```python
@@ -72,4 +81,20 @@ m = max([1, 2, 3])
 ```python
 mod = 3 % 2
 # mod = 1
+```
+
+## Regular Expressions
+
+### Searching strings and extracting groups
+```python
+import re
+
+s = "abc123"
+
+match = re.search(r"^([a-zA-Z]+)(\d+)$", s)
+
+if match:
+    groups = match.groups()
+
+# groups = ("abc", "123")
 ```
