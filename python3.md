@@ -1,6 +1,25 @@
 
 # Python 3
 
+### Deleting an element from a list
+#### Deleting the n-th element in a list
+```python
+a = [1, 2, 3]
+del a[1]
+# a = [1, 3]
+
+a = [1, 2, 3]
+del a[1:]
+# a = [1]
+```
+
+#### Deleting the first element found in list
+```python
+a = [1, 2, 3]
+a.remove(2)
+# a = [1, 3]
+```
+
 ## Dictionaries
 
 ### Looping over dictionaries
@@ -30,6 +49,12 @@ n = s.count('n')
 ```
 
 ## Numbers
+
+### Dividing two numbers and returning the floor
+```python
+f = 3 // 2
+# f = 1
+```
 
 ### Adding numbers in a list
 ```python
