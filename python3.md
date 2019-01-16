@@ -3,6 +3,17 @@
 
 ## Lists
 
+### Setting a starting index value for enumerate
+```python
+a = [1, 2, 3]
+
+for idx, val in enumerate(a, start=1)
+    print f"{idx}: {val}"
+# 1: 1
+# 2: 2
+# 3: 3
+```
+
 ### Getting the last element of a list
 ```python
 a = [1, 2, 3]
