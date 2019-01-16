@@ -67,7 +67,7 @@ a.remove(2)
 # a = [1, 3]
 ```
 
-## Dictionaries
+## Dictionaries and Sets
 
 ### Looping over dictionaries
 #### Accessing keys
@@ -84,6 +84,21 @@ for val in dic.values():
 ```python
 for key, val in dic.items():
     print f"{key}, {val}"
+```
+
+### Using sets
+```python
+# sets are implemented as a value-less hash table
+# unordered and no duplicate elements
+# great for membership testing and eliminating duplicates
+# create an empty set
+s = set()
+
+# add an element
+s.add('a')
+
+# remove an element
+s.remove('a')
 ```
 
 ## Strings
@@ -120,6 +135,19 @@ m = max([1, 2, 3])
 mod = 3 % 2
 # mod = 1
 ```
+
+## Classes and Objects
+
+### Defining a hashable collection
+```python
+# define the __hash__ and __eq__ special methods
+def __hash__(self):
+    return hash(frozenset(self.values))
+
+def __eq__(self, other):
+    return set(self.values) == set(other.values)
+```
+
 
 ## Regular Expressions
 
