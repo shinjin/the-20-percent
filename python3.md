@@ -3,6 +3,19 @@
 
 ## Lists
 
+### Filtering a list comprehension with an if statement
+```python
+groups = {
+    'a': [1, 2, 3],
+    'b': [4, 5],
+    'c': [6]
+}
+
+# keep groups with 2 or more elements
+g = [group for group in groups if len(group) >= 2]
+# g = [[1, 2, 3], [4, 5]]
+```
+
 ### Merging two lists
 ```python
 a1 = [1, 2, 3]
@@ -10,11 +23,11 @@ a2 = [4, 5, 6]
 
 # old school
 m = a1 + a2
-# [1, 2, 3, 4, 5, 6]
+# m = [1, 2, 3, 4, 5, 6]
 
 # >= python 3.5
 m = [*a1, *a2]
-# [1, 2, 3, 4, 5, 6]
+# m = [1, 2, 3, 4, 5, 6]
 ```
 
 ### Setting a starting index value for enumerate
@@ -32,7 +45,7 @@ for idx, val in enumerate(a, start=1)
 ```python
 a = [1, 2, 3]
 a[-1]
-# 3
+# a = 3
 ```
 
 ### Deleting an element from a list
