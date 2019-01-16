@@ -67,7 +67,7 @@ for key in dic:
 for val in dic.values():
     print val
 ```
-#### Accessing values
+#### Accessing key, values
 ```python
 for key, val in dic.items():
     print f"{key}, {val}"
