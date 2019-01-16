@@ -97,8 +97,23 @@ s = set()
 # add an element
 s.add('a')
 
-# remove an element
+# remove an element, raises a KeyError if element doesn't exist
 s.remove('a')
+
+# remove an element
+s.discard('a')
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+# a is a subset of b
+a <= b
+# False
+
+# elements in a that are not in b
+a - b
+# {1, 2}
+
 ```
 
 ## Strings
