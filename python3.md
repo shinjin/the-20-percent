@@ -3,6 +3,20 @@
 
 ## Lists
 
+### Merging two lists
+```python
+a1 = [1, 2, 3]
+a2 = [4, 5, 6]
+
+# old school
+m = a1 + a2
+# [1, 2, 3, 4, 5, 6]
+
+# >= python 3.5
+m = [*a1, *a2]
+# [1, 2, 3, 4, 5, 6]
+```
+
 ### Setting a starting index value for enumerate
 ```python
 a = [1, 2, 3]
