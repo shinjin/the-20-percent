@@ -69,21 +69,16 @@ a.remove(2)
 
 ## Dictionaries and Sets
 
-### Looping over dictionaries
-#### Accessing keys
+### Subtracting counters
 ```python
-for key in dic:
-    print key
-```
-#### Accessing values
-```python
-for val in dic.values():
-    print val
-```
-#### Accessing key, values
-```python
-for key, val in dic.items():
-    print f"{key}, {val}"
+from collections import Counter
+
+c = Counter(a=3, b=1)
+d = Counter(a=1, b=2)
+
+# subtract and keep only positive counts
+c - d
+# {'a': 2}
 ```
 
 ### Using sets
@@ -114,6 +109,23 @@ a <= b
 a - b
 # {1, 2}
 
+```
+
+### Looping over dictionaries
+#### Accessing keys
+```python
+for key in dic:
+    print key
+```
+#### Accessing values
+```python
+for val in dic.values():
+    print val
+```
+#### Accessing key, values
+```python
+for key, val in dic.items():
+    print f"{key}, {val}"
 ```
 
 ## Strings
