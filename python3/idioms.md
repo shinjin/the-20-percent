@@ -79,6 +79,29 @@ a.remove(2)
 
 ## Dictionaries and Sets
 
+### Removing the last inserted element from an ordered dict
+```python
+from collections import OrderedDict
+
+d = OrderedDict()
+d['a'] = 1
+d['b'] = 2
+
+d.popitem(last=False)
+# 1
+```
+
+### Removing and returning an element from a dict
+```python
+d = {'a': 1, 'b': 2, 'c': 3}
+d.pop('b')
+# 2
+
+# set default value if key not found
+d.pop('b', None)
+# None
+```
+
 ### Subtracting counters
 ```python
 from collections import Counter
