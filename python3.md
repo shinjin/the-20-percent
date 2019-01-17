@@ -69,6 +69,16 @@ a.remove(2)
 
 ## Dictionaries and Sets
 
+### Getting common elements in two lists
+```python
+a1 = [1, 2, 3, 4, 5]
+a2 = [3, 4, 5, 6, 7]
+
+# convert to sets and calculate intersection
+b = list(set(a1) & set(a2))
+# b = [3, 4, 5]
+```
+
 ### Subtracting counters
 ```python
 from collections import Counter
@@ -129,6 +139,13 @@ for key, val in dic.items():
 ```
 
 ## Strings
+
+### Converting a string to lowercase
+```python
+s = "Quinnley"
+s.lower()
+# quinnley
+```
 
 ### Counting the occurrences of a character in a string
 ```python
