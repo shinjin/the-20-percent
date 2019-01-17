@@ -3,6 +3,16 @@
 
 ## Lists
 
+### Getting common elements in two lists
+```python
+a1 = [1, 2, 3, 4, 5]
+a2 = [3, 4, 5, 6, 7]
+
+# convert to sets and calculate intersection
+b = list(set(a1) & set(a2))
+# b = [3, 4, 5]
+```
+
 ### Filtering a list comprehension with an if statement
 ```python
 groups = {
@@ -68,16 +78,6 @@ a.remove(2)
 ```
 
 ## Dictionaries and Sets
-
-### Getting common elements in two lists
-```python
-a1 = [1, 2, 3, 4, 5]
-a2 = [3, 4, 5, 6, 7]
-
-# convert to sets and calculate intersection
-b = list(set(a1) & set(a2))
-# b = [3, 4, 5]
-```
 
 ### Subtracting counters
 ```python
