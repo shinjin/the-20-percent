@@ -1,8 +1,23 @@
 
 
 class HashTable:
-    def __init__(self):
-        self.table = [[] for x in range(10)]
+    """ A minimal hash table implementation.
+
+        Usage:
+
+        h = HashTable(10)
+        h.set('a', 1)
+        h.set('b', 2)
+
+        h.get('a')
+        1
+
+        str(h)
+        '{a:1, b:2}'
+    """
+
+    def __init__(self, capacity=100):
+        self.table = [[] for x in range(capacity)]
         self.load_factor = 0.75
         self.size = 0
 
@@ -18,8 +33,8 @@ class HashTable:
         self.table[self.__hash(key)].append((key, val))
         self.size += 1
 
-        # if float(self.size) / len(self.table) >= self.load_factor:
-        #     self.__resize_table()
+        if float(self.size) / len(self.table) >= self.load_factor:
+            self.__resize_table()
 
 
     def delete(self, key):
