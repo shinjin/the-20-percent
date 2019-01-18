@@ -8,10 +8,8 @@ class HashTable:
         h = HashTable(10)
         h.set('a', 1)
         h.set('b', 2)
-
         h.get('a')
         1
-
         str(h)
         '{a:1, b:2}'
     """
@@ -23,8 +21,8 @@ class HashTable:
 
 
     def get(self, key):
-        def find_return(i1, i2):
-            return self.table[i1][i2][1]
+        def find_return(slot, i):
+            return self.table[slot][i][1]
 
         return self.__find_by_key(key, find_return)
 
@@ -38,22 +36,22 @@ class HashTable:
 
 
     def delete(self, key):
-        def find_return(i1, i2):
-            del self.table[i1][i2]
-            self.size += 1
+        def find_return(slot, i):
+            del self.table[slot][i]
+            self.size -= 1
 
         self.__find_by_key(key, find_return)
 
 
     def __find_by_key(self, key, find_return):
-        hkey = self.__hash(key)
+        slot = self.__hash(key)
 
-        if not self.table[hkey]:
+        if not self.table[slot]:
             raise KeyError(f"Key {key} does not exist")
 
-        for i, v in enumerate(self.table[hkey]):
+        for i, v in enumerate(self.table[slot]):
             if v[0] == key:
-                return find_return(hkey, i)
+                return find_return(slot, i)
 
 
     def __hash(self, key):
@@ -79,8 +77,8 @@ class HashTable:
     def __repr__(self):
         els = []
 
-        for i in self.table:
-            for j in i:
-                els.append(':'.join(str(x) for x in j))
+        for slot in self.table:
+            for i in slot:
+                els.append(':'.join(str(x) for x in i))
 
         return '{' + ', '.join(els) + '}'
