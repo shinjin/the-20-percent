@@ -52,6 +52,8 @@ class HashTable:
         for i, v in enumerate(self.table[slot]):
             if v[0] == key:
                 return find_return(slot, i)
+        else:
+            raise KeyError(f"Key {key} does not exist")
 
 
     def __hash(self, key):
