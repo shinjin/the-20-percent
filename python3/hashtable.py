@@ -32,7 +32,7 @@ class HashTable:
         self.size += 1
 
         if float(self.size) / len(self.table) >= self.load_factor:
-            self.__resize_table()
+            self.__resize()
 
 
     def delete(self, key):
@@ -60,8 +60,14 @@ class HashTable:
         return hash(key) % len(self.table)
 
 
-    def __resize_table(self):
-        self.table.extend([[] for x in range(len(self.table) * 2)])
+    def __resize(self):
+        table = list(self.table)
+        self.table = [[] for x in range(len(table) * 2)]
+        self.size = 0
+
+        for slot in table:
+            for i in slot:
+                self.set(*i)
 
 
     def __getitem__(self, key):
