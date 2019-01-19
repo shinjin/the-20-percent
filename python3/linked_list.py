@@ -1,4 +1,5 @@
-""" A linked list implementation with insert, delete, and search functions.
+""" A minimal singly linked list implementation with insert, delete, and search
+    functions.
 """
 
 class Node:
