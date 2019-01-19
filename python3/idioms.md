@@ -77,6 +77,7 @@ a.remove(2)
 # a = [1, 3]
 ```
 
+
 ## Dictionaries and Sets
 
 ### Removing the last inserted element from an ordered dict
@@ -161,6 +162,7 @@ for key, val in dic.items():
     print f"{key}, {val}"
 ```
 
+
 ## Strings
 
 ### Converting a string to lowercase
@@ -176,6 +178,7 @@ s = "Quinnley"
 n = s.count('n')
 # n = 2
 ```
+
 
 ## Numbers
 
@@ -202,6 +205,27 @@ m = max([1, 2, 3])
 mod = 3 % 2
 # mod = 1
 ```
+
+## Dates and times
+
+### Getting the current unix timestamp
+```python
+import time
+
+time.time()
+```
+
+
+## Iterators and Generators
+
+### Getting the first element that matches a condition
+```python
+a = [1, 2, 3, 4, 5]
+
+# get first element > 3
+next((x for x in a if x > 3), None)
+```
+
 
 ## Classes and Objects
 
