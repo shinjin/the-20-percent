@@ -1,6 +1,6 @@
 
 
-def merge_sort(alist):
+def merge_sort(L):
     """ An merge sort implementation.
 
         Usage:
@@ -11,32 +11,31 @@ def merge_sort(alist):
         [31, 47, 49, 51, 69, 76, 78, 92, 97, 98]
     """
 
-    if len(alist)>1:
-        mid = len(alist) // 2
-        lhalf = alist[:mid]
-        rhalf = alist[mid:]
+    if len(L) > 1:
+        mid = len(L) // 2
+        left  = L[:mid]
+        right = L[mid:]
 
-        merge_sort(lhalf)
-        merge_sort(rhalf)
+        merge_sort(left)
+        merge_sort(right)
 
         i, j, k = 0, 0, 0
  
-        while i < len(lhalf) and j < len(rhalf):
-            if lhalf[i] < rhalf[j]:
-                alist[k]=lhalf[i]
-                i = i + 1
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                L[k] = left[i]
+                i += 1
             else:
-                alist[k]=rhalf[j]
-                j = j + 1
+                L[k] = right[j]
+                j += 1
+            k += 1
 
-            k = k + 1
+        while i < len(left):
+            L[k] = left[i]
+            i += 1
+            k += 1
 
-        while i < len(lhalf):
-            alist[k]=lhalf[i]
-            i = i + 1
-            k = k + 1
-
-        while j < len(rhalf):
-            alist[k]=rhalf[j]
-            j = j + 1
-            k = k + 1
+        while j < len(right):
+            L[k] = right[j]
+            j += 1
+            k += 1
