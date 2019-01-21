@@ -3,6 +3,24 @@
 
 ## Lists
 
+### Removing and returning an element from the start of a list
+```python
+a = [1, 2, 3, 4, 5]
+a.pop(0)
+# 1
+# a = [2, 3, 4, 5]
+```
+
+#### For large queues, use deque
+```python
+from collections import deque
+
+a = deque([1, 2, 3, 4, 5])
+a.popleft()
+# 1
+# a = [2, 3, 4, 5]
+```
+
 ### Getting common elements in two lists
 ```python
 a1 = [1, 2, 3, 4, 5]
@@ -80,6 +98,36 @@ a.remove(2)
 
 ## Dictionaries and Sets
 
+### Using sets
+```python
+# sets are implemented as a value-less hash table
+# unordered and no duplicate elements
+# great for membership testing and eliminating duplicates
+# create an empty set
+s = set()
+
+# add an element
+s.add('a')
+
+# remove an element, raises a KeyError if element doesn't exist
+s.remove('a')
+
+# remove an element
+s.discard('a')
+
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+# a is a subset of b
+a <= b
+# False
+
+# elements in a that are not in b
+a - b
+# {1, 2}
+
+```
+
 ### Removing the last inserted element from an ordered dict
 ```python
 from collections import OrderedDict
@@ -113,36 +161,6 @@ d = Counter(a=1, b=2)
 # subtract and keep only positive counts
 c - d
 # {'a': 2}
-```
-
-### Using sets
-```python
-# sets are implemented as a value-less hash table
-# unordered and no duplicate elements
-# great for membership testing and eliminating duplicates
-# create an empty set
-s = set()
-
-# add an element
-s.add('a')
-
-# remove an element, raises a KeyError if element doesn't exist
-s.remove('a')
-
-# remove an element
-s.discard('a')
-
-a = {1, 2, 3}
-b = {3, 4, 5}
-
-# a is a subset of b
-a <= b
-# False
-
-# elements in a that are not in b
-a - b
-# {1, 2}
-
 ```
 
 ### Looping over dictionaries
