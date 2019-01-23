@@ -1,3 +1,6 @@
+""" Two fibonacci sequence implementations: a naive implementation using
+    recursion and an optimized version
+"""
 
 
 def fibonacci_naive(n):
