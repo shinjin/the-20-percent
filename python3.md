@@ -183,6 +183,17 @@ for key, val in dic.items():
 
 ## Strings
 
+### Formatting strings containing expressions
+```python
+name = "Rick"
+f"He said his name is {name}."
+# 'He said his name is Rick.'
+
+today = datetime(year=2019, month=2, day=14)
+f"{today:%B %d, %Y}"
+# 'February 14, 2019'
+```
+
 ### Converting a string to lowercase
 ```python
 s = "Quinnley"
