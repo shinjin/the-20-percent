@@ -258,6 +258,24 @@ next((x for x in a if x > 3), None)
 
 ## Classes and Objects
 
+### Instantiating a class from a string
+#### Class in this module
+```python
+import sys
+
+class MyClass:
+    pass
+
+getattr(sys.modules[__name__], 'MyClass')
+```
+#### Class in external module
+```python
+from importlib import import_module
+
+mod = import_module('package.module')
+getattr(mod, 'MyClass')
+```
+
 ### Defining a hashable collection
 ```python
 # define the __hash__ and __eq__ special methods
